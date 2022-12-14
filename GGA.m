@@ -1,4 +1,4 @@
-function []=GGA(numpopulation,numiteration,data)
+function [offspring,numcluster(I),RI]=GGA(numpopulation,numiteration,data)
 clc
 
 z=data;
@@ -113,9 +113,10 @@ elseif F<=G
      offspring=population(I,:);
      newcluster=numcluster(I);
     disp(G);
-end    
+end 
+RI=RandIndex(offspring,z);  
 display1(X,offspring);
 display(numcluster(I));
-RandIndex(offspring,z);
+display(RI);
 
 end
